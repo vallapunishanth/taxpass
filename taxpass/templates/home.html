@@ -1,22 +1,813 @@
 <!doctype html>
 <html lang="en">
   <head>
-    @@include("partials/head.html", {
-      "pageTitle": "TaxPass"
-    })
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="/assets/fonts/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="./assets/fonts/Feather/feather.css">
+    <link rel="stylesheet" href="./assets/libs/flickity/dist/flickity.min.css">
+    <link rel="stylesheet" href="./assets/libs/flickity-fade/flickity-fade.css">
+    <link rel="stylesheet" href="./assets/libs/aos/dist/aos.css">
+    <link rel="stylesheet" href="./assets/libs/jarallax/dist/jarallax.css">
+    <link rel="stylesheet" href="./assets/libs/highlightjs/styles/vs2015.css">
+    <link rel="stylesheet" href="./assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+
+    <!-- Map -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme.min.css">
+
+    <title>TaxPass</title>
   </head>
   <body>
 
     <!-- MODALS
     ================================================== -->
-    @@include("partials/modals.html")
+    <!-- Example -->
+    <div class="modal fade" id="modalExample" tabindex="-1" role="dialog" aria-labelledby="modalExampleTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+
+            <!-- Close -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+
+            <!-- Image -->
+            <div class="text-center">
+              <img src="../assets/img/illustrations/illustration-1.png" alt="..." class="img-fluid mb-3" style="width: 200px;">
+            </div>
+
+            <!-- Heading -->
+            <h2 class="font-weight-bold text-center mb-1" id="modalExampleTitle">
+              Schedule a demo with us
+            </h2>
+
+            <!-- Text -->
+            <p class="font-size-lg text-center text-muted mb-6 mb-md-8">
+              We can help you solve company communication.
+            </p>
+
+            <!-- Form -->
+            <form>
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <!-- First name -->
+                  <div class="form-label-group">
+                    <input type="text" class="form-control form-control-flush" id="registrationFirstNameModal" placeholder="First name">
+                    <label for="registrationFirstNameModal">First name</label>
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Last name -->
+                  <div class="form-label-group">
+                    <input type="text" class="form-control form-control-flush" id="registrationLastNameModal" placeholder="Last name">
+                    <label for="registrationLastNameModal">Last name</label>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6">
+
+                  <!-- Email -->
+                  <div class="form-label-group">
+                    <input type="email" class="form-control form-control-flush" id="registrationEmailModal" placeholder="Email">
+                    <label for="registrationEmailModal">Email</label>
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                  <!-- Password -->
+                  <div class="form-label-group">
+                    <input type="password" class="form-control form-control-flush" id="registrationPasswordModal" placeholder="Password">
+                    <label for="registrationPasswordModal">Password</label>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+
+                  <!-- Submit -->
+                  <button class="btn btn-block btn-primary mt-3 lift">
+                    Request a demo
+                  </button>
+
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup: Horizontal  -->
+    <div class="modal fade" id="modalSignupHorizontal" tabindex="-1" role="dialog" aria-labelledby="modalSignupHorizontalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="card card-row">
+            <div class="row no-gutters">
+              <div class="col-12 col-md-6 bg-cover card-img-left" style="background-image: url(./assets/img/photos/photo-8.jpg);">
+
+                <!-- Image (placeholder) -->
+                <img src="./assets/img/photos/photo-8.jpg" alt="..." class="img-fluid d-md-none invisible">
+
+                <!-- Shape -->
+                <div class="shape shape-right shape-fluid-y svg-shim text-white d-none d-md-block">
+                  <svg viewBox="0 0 112 690" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M116 0H51V172C76 384 0 517 0 517V690H116V0Z" fill="currentColor"/>
+                  </svg>
+                </div>
+
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="card-body">
+
+                  <!-- Close -->
+                  <button type="button" class="modal-close close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+
+                  <!-- Heading -->
+                  <h2 class="mb-0 font-weight-bold text-center" id="modalSignupHorizontalTitle">
+                    Sign Up
+                  </h2>
+
+                  <!-- Text -->
+                  <p class="mb-6 text-center text-muted">
+                    Simplify your workflow in minutes.
+                  </p>
+
+                  <!-- Form -->
+                  <form class="mb-6">
+
+                    <!-- Email -->
+                    <div class="form-group">
+                      <label class="sr-only" for="modalSignupHorizontalEmail">
+                        Your email
+                      </label>
+                      <input type="email" class="form-control" id="modalSignupHorizontalEmail" placeholder="Your email">
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group mb-5">
+                      <label class="sr-only" for="modalSignupHorizontalPassword">
+                        Create a password
+                      </label>
+                      <input type="password" class="form-control" id="modalSignupHorizontalPassword" placeholder="Create a password">
+                    </div>
+
+                    <!-- Submit -->
+                    <button class="btn btn-block btn-primary" type="submit">
+                      Sign up
+                    </button>
+
+                  </form>
+
+                  <!-- Text -->
+                  <p class="mb-0 font-size-sm text-center text-muted">
+                    Already have an account? <a href="./signin-illustration.html">Log in</a>.
+                  </p>
+
+                </div>
+              </div>
+
+            </div> <!-- / .row -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup: Vertical  -->
+    <div class="modal fade" id="modalSignupVertical" tabindex="-1" role="dialog" aria-labelledby="modalSignupVerticalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="card">
+
+            <!-- Close -->
+            <button type="button" class="modal-close close text-white" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+
+            <!-- Image -->
+            <img src="./assets/img/photos/photo-7.jpg" alt="..." class="card-img-top">
+
+            <!-- Shape -->
+            <div class="position-relative">
+              <div class="shape shape-bottom shape-fluid-x svg-shim text-white">
+                <svg viewBox="0 0 2880 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0V480H2880V0H2160Z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Body -->
+            <div class="card-body">
+
+              <!-- Heading -->
+              <h2 class="mb-0 font-weight-bold text-center" id="modalSignupVerticalTitle">
+                Sign Up
+              </h2>
+
+              <!-- Text -->
+              <p class="mb-6 text-center text-muted">
+                Simplify your workflow in minutes.
+              </p>
+
+              <!-- Form -->
+              <form class="mb-6">
+
+                <!-- Email -->
+                <div class="form-group">
+                  <label class="sr-only" for="modalSignupVerticalEmail">
+                    Your email
+                  </label>
+                  <input type="email" class="form-control" id="modalSignupVerticalEmail" placeholder="Your email">
+                </div>
+
+                <!-- Password -->
+                <div class="form-group mb-5">
+                  <label class="sr-only" for="modalSignupVerticalPassword">
+                    Create a password
+                  </label>
+                  <input type="password" class="form-control" id="modalSignupVerticalPassword" placeholder="Create a password">
+                </div>
+
+                <!-- Submit -->
+                <button class="btn btn-block btn-primary" type="submit">
+                  Sign up
+                </button>
+
+              </form>
+
+              <!-- Text -->
+              <p class="mb-0 font-size-sm text-center text-muted">
+                Already have an account? <a href="./signin-illustration.html">Log in</a>.
+              </p>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signin: Horizontal  -->
+    <div class="modal fade" id="modalSigninHorizontal" tabindex="-1" role="dialog" aria-labelledby="modalSigninHorizontalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="card card-row">
+            <div class="row no-gutters">
+              <div class="col-12 col-md-6 bg-cover card-img-left" style="background-image: url(./assets/img/photos/photo-1.jpg);">
+
+                <!-- Image (placeholder) -->
+                <img src="./assets/img/photos/photo-1.jpg" alt="..." class="img-fluid d-md-none invisible">
+
+                <!-- Shape -->
+                <div class="shape shape-right shape-fluid-y svg-shim text-white d-none d-md-block">
+                  <svg viewBox="0 0 112 690" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M116 0H51V172C76 384 0 517 0 517V690H116V0Z" fill="currentColor"/>
+                  </svg>
+                </div>
+
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="card-body">
+
+                  <!-- Close -->
+                  <button type="button" class="modal-close close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+
+                  <!-- Heading -->
+                  <h2 class="mb-0 font-weight-bold text-center" id="modalSigninHorizontalTitle">
+                    Sign In
+                  </h2>
+
+                  <!-- Text -->
+                  <p class="mb-6 text-center text-muted">
+                    Simplify your workflow in minutes.
+                  </p>
+
+                  <!-- Form -->
+                  <form class="mb-6">
+
+                    <!-- Email -->
+                    <div class="form-group">
+                      <label class="sr-only" for="modalSigninHorizontalEmail">
+                        Your email
+                      </label>
+                      <input type="email" class="form-control" id="modalSigninHorizontalEmail" placeholder="Your email">
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group mb-5">
+                      <label class="sr-only" for="modalSigninHorizontalPassword">
+                        Create a password
+                      </label>
+                      <input type="password" class="form-control" id="modalSigninHorizontalPassword" placeholder="Create a password">
+                    </div>
+
+                    <!-- Submit -->
+                    <button class="btn btn-block btn-primary" type="submit">
+                      Sign in
+                    </button>
+
+                  </form>
+
+                  <!-- Text -->
+                  <p class="mb-0 font-size-sm text-center text-muted">
+                    Don't have an account yet? <a href="./signin-illustration.html">Sign up</a>.
+                  </p>
+
+                </div>
+              </div>
+
+            </div> <!-- / .row -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup: Vertical  -->
+    <div class="modal fade" id="modalSigninVertical" tabindex="-1" role="dialog" aria-labelledby="modalSigninVerticalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="card">
+
+            <!-- Close -->
+            <button type="button" class="modal-close close text-white" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+
+            <!-- Image -->
+            <img src="./assets/img/photos/photo-21.jpg" alt="..." class="card-img-top">
+
+            <!-- Shape -->
+            <div class="position-relative">
+              <div class="shape shape-bottom shape-fluid-x svg-shim text-white">
+                <svg viewBox="0 0 2880 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0V480H2880V0H2160Z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Body -->
+            <div class="card-body">
+
+              <!-- Heading -->
+              <h2 class="mb-0 font-weight-bold text-center" id="modalSigninVerticalTitle">
+                Sign In
+              </h2>
+
+              <!-- Text -->
+              <p class="mb-6 text-center text-muted">
+                Simplify your workflow in minutes.
+              </p>
+
+              <!-- Form -->
+              <form class="mb-6">
+
+                <!-- Email -->
+                <div class="form-group">
+                  <label class="sr-only" for="modalSigninVerticalEmail">
+                    Your email
+                  </label>
+                  <input type="email" class="form-control" id="modalSigninVerticalEmail" placeholder="Your email">
+                </div>
+
+                <!-- Password -->
+                <div class="form-group mb-5">
+                  <label class="sr-only" for="modalSigninVerticalPassword">
+                    Create a password
+                  </label>
+                  <input type="password" class="form-control" id="modalSigninVerticalPassword" placeholder="Create a password">
+                </div>
+
+                <!-- Submit -->
+                <button class="btn btn-block btn-primary" type="submit">
+                  Sign in
+                </button>
+
+              </form>
+
+              <!-- Text -->
+              <p class="mb-0 font-size-sm text-center text-muted">
+                Don't have an account yet? <a href="./signin-illustration.html">Sign up</a>.
+              </p>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- NAVBAR
     ================================================== -->
-    @@include("partials/navbar.html", {
-      "classList": "navbar-light",
-      "type": "boxed"
-    })
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="./index.html">
+    <!--      <img src="./static/img/brand.svg" class="navbar-brand-img" alt="...">-->
+    <!--      <img src="" class="navbar-brand-img" alt="Taxpass">-->
+              <h1 style="color: ">Taxpass</h1>
+        </a>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+          <!-- Toggler -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fe fe-x"></i>
+          </button>
+
+          <!-- Navigation -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarLandings" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                Home
+              </a>
+    <!--          <div class="dropdown-menu dropdown-menu-xl p-0" aria-labelledby="navbarLandings">-->
+    <!--            <div class="row no-gutters">-->
+    <!--              <div class="col-12 col-lg-6">-->
+    <!--                <div class="dropdown-img-left" style="background-image: url(./static/img/photos/photo-3.jpg);">-->
+
+    <!--                  &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--                  <h4 class="font-weight-bold text-white mb-0">-->
+    <!--                    Want to see an overview?-->
+    <!--                  </h4>-->
+
+    <!--                  &lt;!&ndash; Text &ndash;&gt;-->
+    <!--                  <p class="font-size-sm text-white">-->
+    <!--                    See all the pages at once.-->
+    <!--                  </p>-->
+
+    <!--                  &lt;!&ndash; Button &ndash;&gt;-->
+    <!--                  <a href="./overview.html" class="btn btn-sm btn-white shadow-dark fonFt-size-sm">-->
+    <!--                    View all pages-->
+    <!--                  </a>-->
+    <!--                  -->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--              <div class="col-12 col-lg-6">-->
+    <!--                <div class="dropdown-body">-->
+    <!--                  <div class="row no-gutters">-->
+    <!--                    <div class="col-6">-->
+
+    <!--                      &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--                      <h6 class="dropdown-header">-->
+    <!--                        Services-->
+    <!--                      </h6>-->
+
+    <!--                      &lt;!&ndash; List &ndash;&gt;-->
+    <!--                      <a class="dropdown-item" href="./coworking.html">-->
+    <!--                        Coworking-->
+    <!--                      </a>-->
+    <!--                      <a class="dropdown-item" href="./rental.html">-->
+    <!--                        Rental-->
+    <!--                      </a>-->
+    <!--                      <a class="dropdown-item mb-5" href="./job.html">-->
+    <!--                        Job Listing-->
+    <!--                      </a>-->
+
+    <!--                      &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--                      <h6 class="dropdown-header">-->
+    <!--                        Apps-->
+    <!--                      </h6>-->
+
+    <!--                      &lt;!&ndash; List &ndash;&gt;-->
+    <!--                      <a class="dropdown-item" href="./desktop-app.html">-->
+    <!--                        Desktop-->
+    <!--                      </a>-->
+    <!--                      <a class="dropdown-item" href="./mobile-app.html">-->
+    <!--                        Mobile-->
+    <!--                      </a>-->
+
+    <!--                    </div>-->
+    <!--                    <div class="col-6">-->
+    <!--                      -->
+    <!--                      &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--                      <h6 class="dropdown-header">-->
+    <!--                        Web -->
+    <!--                      </h6>-->
+
+    <!--                      &lt;!&ndash; List &ndash;&gt;-->
+    <!--                      <a class="dropdown-item" href="./index.html">-->
+    <!--                        Basic-->
+    <!--                      </a>-->
+    <!--                      <a class="dropdown-item" href="./enterprise.html">-->
+    <!--                        Enterprise-->
+    <!--                      </a>-->
+    <!--                      <a class="dropdown-item" href="./service.html">-->
+    <!--                        Service-->
+    <!--                      </a>-->
+    <!--                      <a class="dropdown-item" href="./cloud.html">-->
+    <!--                        Cloud Hosting-->
+    <!--                      </a>-->
+
+    <!--                    </div>-->
+    <!--                  </div> &lt;!&ndash; / .row &ndash;&gt;-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div> &lt;!&ndash; / .row &ndash;&gt;-->
+    <!--          </div>-->
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarPages" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                About us
+              </a>
+    <!--          <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="navbarPages">-->
+    <!--            <div class="row no-gutters">-->
+    <!--              <div class="col-6 col-lg-4">-->
+    <!--                -->
+    <!--                &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--                <h6 class="dropdown-header">-->
+    <!--                  Career-->
+    <!--                </h6>-->
+
+    <!--                &lt;!&ndash; List &ndash;&gt;-->
+    <!--                <a class="dropdown-item" href="./careers.html">-->
+    <!--                  Listing-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item mb-5" href="./career-single.html">-->
+    <!--                  Opening-->
+    <!--                </a>-->
+
+    <!--                &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--                <h6 class="dropdown-header">-->
+    <!--                  Company-->
+    <!--                </h6>-->
+
+    <!--                &lt;!&ndash; List &ndash;&gt;-->
+    <!--                <a class="dropdown-item" href="./about.html">-->
+    <!--                  About-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" href="./pricing.html">-->
+    <!--                  Pricing-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item mb-5 mb-lg-0" href="./terms-of-service.html">-->
+    <!--                  Terms-->
+    <!--                </a>             -->
+
+    <!--              </div>-->
+    <!--              <div class="col-6 col-lg-4">-->
+    <!--                -->
+    <!--                &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--                <h6 class="dropdown-header">-->
+    <!--                  Help center-->
+    <!--                </h6>-->
+
+    <!--                &lt;!&ndash; List &ndash;&gt;-->
+    <!--                <a class="dropdown-item" href="./help-center.html">-->
+    <!--                  Overview-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item mb-5" href="./help-center-article.html">-->
+    <!--                  Article-->
+    <!--                </a>-->
+
+    <!--                &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--                <h6 class="dropdown-header">-->
+    <!--                  Contact-->
+    <!--                </h6>-->
+
+    <!--                &lt;!&ndash; List &ndash;&gt;-->
+    <!--                <a class="dropdown-item" href="./contact.html">-->
+    <!--                  Basic-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" href="./contact-alt.html">-->
+    <!--                  Cover-->
+    <!--                </a>          -->
+
+    <!--              </div>-->
+    <!--              <div class="col-6 col-lg-4">-->
+    <!--                -->
+    <!--                &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--                <h6 class="dropdown-header">-->
+    <!--                  Blog-->
+    <!--                </h6>-->
+
+    <!--                &lt;!&ndash; List &ndash;&gt;-->
+    <!--                <a class="dropdown-item" href="./blog.html">-->
+    <!--                  Rich View-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" href="./blog-post.html">-->
+    <!--                  Article-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" href="./blog-showcase.html">-->
+    <!--                  Showcase-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" href="./blog-search.html">-->
+    <!--                  Search-->
+    <!--                </a>            -->
+
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </div> &lt;!&ndash; / .row &ndash;&gt;-->
+            </li>
+            <li class="nav-item dropdown">
+
+              <a class="nav-link "   href="#how-it-works" aria-haspopup="true" aria-expanded="false">
+                How it works
+              </a>
+    <!--          <ul class="dropdown-menu" aria-labelledby="navbarAccount">-->
+    <!--            <li class="dropdown-item dropright">-->
+    <!--              <a class="dropdown-link dropdown-toggle" data-toggle="dropdown" href="#">-->
+    <!--                Sign In-->
+    <!--              </a>-->
+    <!--              <div class="dropdown-menu">-->
+    <!--                <a class="dropdown-item" href="./signin-cover.html">-->
+    <!--                  Side Cover-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" href="./signin-illustration.html">-->
+    <!--                  Illustration-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" href="./signin.html">-->
+    <!--                  Basic-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" data-toggle="modal" href="#modalSigninHorizontal">-->
+    <!--                  Modal Horizontal-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" data-toggle="modal" href="#modalSigninVertical">-->
+    <!--                  Modal Vertical-->
+    <!--                </a>-->
+    <!--              </div>-->
+    <!--            </li>-->
+    <!--            <li class="dropdown-item dropright">-->
+    <!--              <a class="dropdown-link dropdown-toggle" data-toggle="dropdown" href="#">-->
+    <!--                Sign Up-->
+    <!--              </a>-->
+    <!--              <div class="dropdown-menu">-->
+    <!--                <a class="dropdown-item" href="./signup-cover.html">-->
+    <!--                  Side Cover-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" href="./signup-illustration.html">-->
+    <!--                  Illustration-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" href="./signup.html">-->
+    <!--                  Basic-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" data-toggle="modal" href="#modalSignupHorizontal">-->
+    <!--                  Modal Horizontal-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" data-toggle="modal" href="#modalSignupVertical">-->
+    <!--                  Modal Vertical-->
+    <!--                </a>-->
+    <!--              </div>-->
+    <!--            </li>-->
+    <!--            <li class="dropdown-item dropright">-->
+    <!--              <a class="dropdown-link dropdown-toggle" data-toggle="dropdown" href="#">-->
+    <!--                Password Reset-->
+    <!--              </a>-->
+    <!--              <div class="dropdown-menu">-->
+    <!--                <a class="dropdown-item" href="./password-reset-cover.html">-->
+    <!--                  Side Cover-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" href="./password-reset-illustration.html">-->
+    <!--                  Illustration-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" href="./password-reset.html">-->
+    <!--                  Basic-->
+    <!--                </a>-->
+    <!--              </div>-->
+    <!--            </li>-->
+    <!--            <li class="dropdown-item dropright">-->
+    <!--              <a class="dropdown-link dropdown-toggle" data-toggle="dropdown" href="#">-->
+    <!--                Error-->
+    <!--              </a>-->
+    <!--              <div class="dropdown-menu">-->
+    <!--                <a class="dropdown-item" href="./error-cover.html">-->
+    <!--                  Side Cover-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" href="./error-illustration.html">-->
+    <!--                  Illustration-->
+    <!--                </a>-->
+    <!--                <a class="dropdown-item" href="./error.html">-->
+    <!--                  Basic-->
+    <!--                </a>-->
+    <!--              </div>-->
+    <!--            </li>-->
+    <!--          </ul>-->
+
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDocumentation" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                Blog
+              </a>
+    <!--          <div class="dropdown-menu dropdown-menu-md" aria-labelledby="navbarDocumentation">-->
+    <!--            <div class="list-group list-group-flush">-->
+    <!--              <a class="list-group-item" href="./docs/index.html">-->
+    <!--                -->
+    <!--                &lt;!&ndash; Icon &ndash;&gt;-->
+    <!--                <div class="icon icon-sm text-primary">-->
+
+    <!--                </div>-->
+    <!--                -->
+    <!--                &lt;!&ndash; Content &ndash;&gt;-->
+    <!--                <div class="ml-4">-->
+
+    <!--                  &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--                  <h6 class="font-weight-bold text-uppercase text-primary mb-0">-->
+    <!--                    Documentation-->
+    <!--                  </h6>-->
+
+    <!--                  &lt;!&ndash; Text &ndash;&gt;-->
+    <!--                  <p class="font-size-sm text-gray-700 mb-0">-->
+    <!--                    Customizing and building-->
+    <!--                  </p>-->
+
+    <!--                </div>-->
+
+    <!--              </a>-->
+
+
+    <!--              <a class="list-group-item" href="./docs/alerts.html">-->
+    <!--                -->
+    <!--                &lt;!&ndash; Icon &ndash;&gt;-->
+    <!--                <div class="icon icon-sm text-primary">-->
+
+    <!--                </div>-->
+    <!--                -->
+    <!--                &lt;!&ndash; Content &ndash;&gt;-->
+    <!--                <div class="ml-4">-->
+    <!--                  -->
+    <!--                  &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--                  <h6 class="font-weight-bold text-uppercase text-primary mb-0">-->
+    <!--                    Components-->
+    <!--                  </h6>-->
+
+    <!--                  &lt;!&ndash; Text &ndash;&gt;-->
+    <!--                  <p class="font-size-sm text-gray-700 mb-0">-->
+    <!--                    Full list of components-->
+    <!--                  </p>-->
+
+    <!--                </div>-->
+
+    <!--              </a>-->
+    <!--              <a class="list-group-item" href="./docs/changelog.html">-->
+    <!--                -->
+    <!--                &lt;!&ndash; Icon &ndash;&gt;-->
+    <!--                <div class="icon icon-sm text-primary">-->
+
+    <!--                </div>-->
+    <!--                -->
+    <!--                &lt;!&ndash; Content &ndash;&gt;-->
+    <!--                <div class="ml-4">-->
+    <!--                  -->
+    <!--                  &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--                  <h6 class="font-weight-bold text-uppercase text-primary mb-0">-->
+    <!--                    Changelog-->
+    <!--                  </h6>-->
+
+    <!--                  &lt;!&ndash; Text &ndash;&gt;-->
+    <!--                  <p class="font-size-sm text-gray-700 mb-0">-->
+    <!--                    Keep track of changes-->
+    <!--                  </p>-->
+
+    <!--                </div>-->
+    <!--                  -->
+    <!--                &lt;!&ndash; Badge &ndash;&gt;-->
+    <!--                <span class="badge badge-pill badge-primary-soft ml-auto">-->
+    <!--                  1.1.0-->
+    <!--                </span>-->
+
+    <!--              </a>-->
+    <!--            </div>-->
+    <!--          </div>-->
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link"  href="#faq" aria-haspopup="false" aria-expanded="false">
+                FAQs
+              </a>
+            </li>
+          </ul>
+
+          <!-- Button -->
+          <a class="navbar-btn btn btn-sm btn-primary lift ml-auto" href="/signup.html" target="_blank">
+            Sign Up
+          </a>
+
+        </div>
+
+      </div>
+    </nav>
 
     <!-- WELCOME
     ================================================== -->
@@ -24,7 +815,10 @@
 
       <!-- Shape -->
       <div class="shape shape-fluid-x shape-blur-2 svg-shim text-light">
-        @@include("assets/img/shapes/blurs/blur-2.svg")
+        <svg viewBox="0 0 1313 768" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M442.794 768C605.882 768 748.362 679.773 825.111 548.444L825.294 549C825.294 549 825.543 548.251 826.056 546.819C839.139 524.212 850.279 500.339 859.248 475.43C901.996 397.81 989.306 277.09 1144.29 206L1143.37 205.307C1230.34 171.296 1295.63 94.049 1312.83 0H1.29419V295.514C0.631105 305.423 0.294189 315.422 0.294189 325.5C0.294189 569.886 198.408 768 442.794 768Z" fill="currentColor"/>
+        </svg>
+
       </div>
 
       <!-- Content -->
@@ -79,7 +873,17 @@
 
             <!-- Icon -->
             <div class="icon text-primary mb-3">
-              @@include("assets/img/icons/duotone-icons/General/Settings-1.svg")
+              <?xml version="1.0" encoding="UTF-8"?>
+              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+                  <title>Stockholm-icons / General / Settings-1</title>
+                  <desc>Created with Sketch.</desc>
+                  <g id="Stockholm-icons-/-General-/-Settings-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <rect id="bound" x="0" y="0" width="24" height="24"></rect>
+                      <path d="M7,3 L17,3 C19.209139,3 21,4.790861 21,7 C21,9.209139 19.209139,11 17,11 L7,11 C4.790861,11 3,9.209139 3,7 C3,4.790861 4.790861,3 7,3 Z M7,9 C8.1045695,9 9,8.1045695 9,7 C9,5.8954305 8.1045695,5 7,5 C5.8954305,5 5,5.8954305 5,7 C5,8.1045695 5.8954305,9 7,9 Z" id="Combined-Shape" fill="#335EEA"></path>
+                      <path d="M7,13 L17,13 C19.209139,13 21,14.790861 21,17 C21,19.209139 19.209139,21 17,21 L7,21 C4.790861,21 3,19.209139 3,17 C3,14.790861 4.790861,13 7,13 Z M17,19 C18.1045695,19 19,18.1045695 19,17 C19,15.8954305 18.1045695,15 17,15 C15.8954305,15 15,15.8954305 15,17 C15,18.1045695 15.8954305,19 17,19 Z" id="Combined-Shape" fill="#335EEA" opacity="0.3"></path>
+                  </g>
+              </svg>
             </div>
 
             <!-- Heading -->
@@ -97,7 +901,17 @@
 
             <!-- Icon -->
             <div class="icon text-primary mb-3">
-              @@include("assets/img/icons/duotone-icons/Layout/Layout-arrange.svg")
+              <?xml version="1.0" encoding="UTF-8"?>
+              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+                  <title>Stockholm-icons / Layout / Layout-arrange</title>
+                  <desc>Created with Sketch.</desc>
+                  <g id="Stockholm-icons-/-Layout-/-Layout-arrange" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <rect id="bound" x="0" y="0" width="24" height="24"></rect>
+                      <path d="M5.5,4 L9.5,4 C10.3284271,4 11,4.67157288 11,5.5 L11,6.5 C11,7.32842712 10.3284271,8 9.5,8 L5.5,8 C4.67157288,8 4,7.32842712 4,6.5 L4,5.5 C4,4.67157288 4.67157288,4 5.5,4 Z M14.5,16 L18.5,16 C19.3284271,16 20,16.6715729 20,17.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,17.5 C13,16.6715729 13.6715729,16 14.5,16 Z" id="Combined-Shape" fill="#335EEA"></path>
+                      <path d="M5.5,10 L9.5,10 C10.3284271,10 11,10.6715729 11,11.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,11.5 C4,10.6715729 4.67157288,10 5.5,10 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,12.5 C20,13.3284271 19.3284271,14 18.5,14 L14.5,14 C13.6715729,14 13,13.3284271 13,12.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z" id="Combined-Shape" fill="#335EEA" opacity="0.3"></path>
+                  </g>
+              </svg>
             </div>
 
             <!-- Heading -->
@@ -115,7 +929,17 @@
 
             <!-- Icon -->
             <div class="icon text-primary mb-3">
-              @@include("assets/img/icons/duotone-icons/Code/Code.svg")
+              <?xml version="1.0" encoding="UTF-8"?>
+              <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+                  <title>Stockholm-icons / Code / Code</title>
+                  <desc>Created with Sketch.</desc>
+                  <g id="Stockholm-icons-/-Code-/-Code" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <rect id="bound" x="0" y="0" width="24" height="24"></rect>
+                      <path d="M17.2718029,8.68536757 C16.8932864,8.28319382 16.9124644,7.65031935 17.3146382,7.27180288 C17.7168119,6.89328641 18.3496864,6.91246442 18.7282029,7.31463817 L22.7282029,11.5646382 C23.0906029,11.9496882 23.0906029,12.5503176 22.7282029,12.9353676 L18.7282029,17.1853676 C18.3496864,17.5875413 17.7168119,17.6067193 17.3146382,17.2282029 C16.9124644,16.8496864 16.8932864,16.2168119 17.2718029,15.8146382 L20.6267538,12.2500029 L17.2718029,8.68536757 Z M6.72819712,8.6853647 L3.37324625,12.25 L6.72819712,15.8146353 C7.10671359,16.2168091 7.08753558,16.8496835 6.68536183,17.2282 C6.28318808,17.6067165 5.65031361,17.5875384 5.27179713,17.1853647 L1.27179713,12.9353647 C0.909397125,12.5503147 0.909397125,11.9496853 1.27179713,11.5646353 L5.27179713,7.3146353 C5.65031361,6.91246155 6.28318808,6.89328354 6.68536183,7.27180001 C7.08753558,7.65031648 7.10671359,8.28319095 6.72819712,8.6853647 Z" id="Combined-Shape" fill="#335EEA"></path>
+                      <rect id="Rectangle-28" fill="#335EEA" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-345.000000) translate(-12.000000, -12.000000) " x="11" y="4" width="2" height="16" rx="1"></rect>
+                  </g>
+              </svg>
             </div>
 
             <!-- Heading -->
@@ -301,7 +1125,15 @@
 
       <!-- Shape -->
       <div class="shape shape-blur-3 svg-shim text-white">
-        @@include("assets/img/shapes/blurs/blur-3.svg")
+        <svg viewBox="0 0 1738 487" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0H1420.92C1420.92 0 2134.35 457.505 1420.92 485.868C707.502 514.231 0 0 0 0Z" fill="url(#paint0_linear)"/>
+          <defs>
+            <linearGradient id="paint0_linear" x1="0" y1="0" x2="1049.98" y2="912.68" gradientUnits="userSpaceOnUse">
+            <stop stop-color="currentColor" stop-opacity="0.075"/>
+            <stop offset="1" stop-color="currentColor" stop-opacity="0"/>
+          </linearGradient>
+          </defs>
+        </svg>
       </div>
 
       <!-- Content -->
@@ -386,7 +1218,9 @@
     ================================================== -->
     <div class="position-relative">
       <div class="shape shape-bottom shape-fluid-x svg-shim text-light">
-        @@include("assets/img/shapes/curves/curve-1.svg")
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"/>
+        </svg>
       </div>
     </div>
 
@@ -1169,13 +2003,218 @@
 
     <!-- FOOTER
     ================================================== -->
-    @@include("partials/footer.html", {
-      "classList": "bg-dark"
-    })
+    <footer class="py-8 py-md-11 bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-4 col-lg-4">
+
+            <!-- Brand -->
+    <!--        <img src="./static/img/brand.svg" alt="..." class="footer-brand img-fluid mb-2">-->
+            <h1 class="text-muted">Taxpass</h1>
+            <!-- Text -->
+            <p class="text-gray-700 mb-2">
+              for immigrants.
+            </p>
+
+            <!-- Social -->
+            <ul class="list-unstyled list-inline list-social mb-6 mb-md-0">
+              <li class="list-inline-item list-social-item mr-3">
+                <a href="#!" class="text-decoration-none">
+                  <img src="./assets/img/icons/social/instagram.svg" class="list-social-icon" alt="...">
+                </a>
+              </li>
+              <li class="list-inline-item list-social-item mr-3">
+                <a href="#!" class="text-decoration-none">
+                  <img src="./assets/img/icons/social/facebook.svg" class="list-social-icon" alt="...">
+                </a>
+              </li>
+              <li class="list-inline-item list-social-item mr-3">
+                <a href="#!" class="text-decoration-none">
+                  <img src="./assets/img/icons/social/twitter.svg" class="list-social-icon" alt="...">
+                </a>
+              </li>
+              <li class="list-inline-item list-social-item">
+                <a href="#!" class="text-decoration-none">
+                  <img src="./assets/img/icons/social/pinterest.svg" class="list-social-icon" alt="...">
+                </a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-6 col-md-4 col-lg-4">
+
+            <!-- Heading -->
+            <h6 class="font-weight-bold text-uppercase text-gray-700">
+              Services
+            </h6>
+
+            <!-- List -->
+            <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  Personal Tax
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  Fbars
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  Tax Advice
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  Financial Advice
+                </a>
+              </li>
+              <li>
+                <a href="#!" class="text-reset">
+                  Loan Advice
+                </a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-6 col-md-4 col-lg-4">
+
+            <!-- Heading -->
+            <h6 class="font-weight-bold text-uppercase text-gray-700">
+              Company
+            </h6>
+
+            <!-- List -->
+            <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  About us
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  Blog
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  FAQ's
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  Careers
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  Contact us
+                </a>
+              </li>
+            </ul>
+
+          </div>
+    <!--      <div class="col-6 col-md-4 offset-md-4 col-lg-2 offset-lg-0">-->
+    <!--        -->
+    <!--        &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--        <h6 class="font-weight-bold text-uppercase text-gray-700">-->
+    <!--          Connect-->
+    <!--        </h6>-->
+
+    <!--        &lt;!&ndash; List &ndash;&gt;-->
+    <!--        <ul class="list-unstyled text-muted mb-0">-->
+    <!--          <li class="mb-3">-->
+    <!--            <a href="#!" class="text-reset">-->
+    <!--              Page Builder-->
+    <!--            </a>-->
+    <!--          </li>-->
+    <!--          <li class="mb-3">-->
+    <!--            <a href="#!" class="text-reset">-->
+    <!--              UI Kit-->
+    <!--            </a>-->
+    <!--          </li>-->
+    <!--          <li class="mb-3">-->
+    <!--            <a href="#!" class="text-reset">-->
+    <!--              Styleguide-->
+    <!--            </a>-->
+    <!--          </li>-->
+    <!--          <li class="mb-3">-->
+    <!--            <a href="#!" class="text-reset">-->
+    <!--              Documentation-->
+    <!--            </a>-->
+    <!--          </li>-->
+    <!--          <li class="mb-3">-->
+    <!--            <a href="#!" class="text-reset">-->
+    <!--              Changelog-->
+    <!--            </a>-->
+    <!--          </li>-->
+    <!--          <li class="mb-3">-->
+    <!--            <a href="#!" class="text-reset">-->
+    <!--              Documentation-->
+    <!--            </a>-->
+    <!--          </li>-->
+    <!--          <li>-->
+    <!--            <a href="#!" class="text-reset">-->
+    <!--              Changelog-->
+    <!--            </a>-->
+    <!--          </li>-->
+    <!--        </ul>-->
+
+    <!--      </div>-->
+    <!--      <div class="col-6 col-md-4 col-lg-2">-->
+    <!--        -->
+    <!--        &lt;!&ndash; Heading &ndash;&gt;-->
+    <!--        <h6 class="font-weight-bold text-uppercase text-gray-700">-->
+    <!--          Legal-->
+    <!--        </h6>-->
+
+    <!--        &lt;!&ndash; List &ndash;&gt;-->
+    <!--        <ul class="list-unstyled text-muted mb-0">-->
+    <!--          <li class="mb-3">-->
+    <!--            <a href="#!" class="text-reset">-->
+    <!--              Documentation-->
+    <!--            </a>-->
+    <!--          </li>-->
+    <!--          <li class="mb-3">-->
+    <!--            <a href="#!" class="text-reset">-->
+    <!--              Changelog-->
+    <!--            </a>-->
+    <!--          </li>-->
+    <!--          <li>-->
+    <!--            <a href="#!" class="text-reset">-->
+    <!--              Pagebuilder-->
+    <!--            </a>-->
+    <!--          </li>-->
+    <!--        </ul>-->
+
+    <!--      </div>-->
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </footer>
 
     <!-- JAVASCRIPT
     ================================================== -->
-    @@include("partials/scripts.html")
+    <!-- Libs JS -->
+    <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/libs/flickity/dist/flickity.pkgd.min.js"></script>
+    <script src="./assets/libs/flickity-fade/flickity-fade.js"></script>
+    <script src="./assets/libs/aos/dist/aos.js"></script>
+    <script src="./assets/libs/smooth-scroll/dist/smooth-scroll.min.js"></script>
+    <script src="./assets/libs/jarallax/dist/jarallax.min.js"></script>
+    <script src="./assets/libs/jarallax/dist/jarallax-video.min.js"></script>
+    <script src="./assets/libs/jarallax/dist/jarallax-element.min.js"></script>
+    <script src="./assets/libs/typed.js/lib/typed.min.js"></script>
+    <script src="./assets/libs/countup.js/dist/countUp.min.js"></script>
+    <script src="./assets/libs/highlightjs/highlight.pack.min.js"></script>
+    <script src="./assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+
+    <!-- Map -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+    <!-- Theme JS -->
+    <script src="./assets/js/theme.min.js"></script>
 
   </body>
 </html>
