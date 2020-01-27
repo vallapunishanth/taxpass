@@ -1,0 +1,304 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Title -->
+  <title>TaxPass | Signup</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/tricky/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="/assets/tricky/assets/vendor/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/assets/tricky/assets/vendor/animate.css/animate.min.css">
+  <link rel="stylesheet" href="/assets/tricky/assets/vendor/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="/assets/tricky/assets/css/theme.css">
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header id="header" class="u-header u-header--bg-transparent u-header--abs-top">
+    <div class="u-header__section">
+      <div id="logoAndNav" class="container-fluid">
+        <!-- Nav -->
+        <nav class="navbar navbar-expand u-header__navbar">
+          <!-- White Logo -->
+          <a class="d-none d-lg-flex navbar-brand u-header__navbar-brand u-header__navbar-brand-center u-header__navbar-brand-text-white" href="{% url 'home' %}" aria-label="Front">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="46px" height="46px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
+              <path fill="#E1E4EA" opacity=".65" d="M23,41.1L23,41.1c-9.9,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6v11.4C41,33,32.9,41.1,23,41.1z"/>
+              <path class="fill-white" opacity=".5" d="M28,36L28,36c-9.9,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3C43,0.1,46,3.1,46,6.7v11.4C46,28,38,36,28,36z"/>
+              <path class="fill-white" opacity=".7" d="M18,46.1L18,46.1c-10,0-18-8-18-18l0,0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6v11.4C35.9,38.1,27.9,46.1,18,46.1z"/>
+              <path class="fill-primary" d="M17.4,34.1V18.4h10.2v2.9h-6.4v3.4H26v2.9h-4.8v6.5H17.4z"/>
+            </svg>
+            <span class=" u-header__navbar-brand-text">taxpass</span>
+          </a>
+          <!-- End White Logo -->
+        </nav>
+        <!-- End Nav -->
+      </div>
+    </div>
+  </header>
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Form -->
+    <div class="d-flex align-items-center position-relative height-lg-100vh">
+      <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center gradient-half-primary-v1 height-lg-100vh px-0">
+        <div class="w-100 p-5">
+
+
+          <!-- Testimonials Carousel Main -->
+          <div id="testimonialsNavMain" class="js-slick-carousel u-slick mb-4"
+               data-infinite="true"
+               data-autoplay="true"
+               data-speed="5000"
+               data-fade="true"
+               data-nav-for="#testimonialsNavPagination">
+            <div class="js-slide">
+              <!-- Testimonials -->
+              <div class="w-md-80 w-lg-60 text-center mx-auto">
+                <blockquote class="h5 text-white font-weight-normal mb-4">All your taxes are taken care by experts who are well aware of immigration needs.</blockquote>
+                <h1 class="h6 text-white-70">Bookkeeping</h1>
+              </div>
+              <!-- End Testimonials -->
+            </div>
+
+            <div class="js-slide">
+              <!-- Testimonials -->
+              <div class="w-md-80 w-lg-60 text-center mx-auto">
+                <blockquote class="h5 text-white font-weight-normal mb-4">We help with your corporate, franchise & staff's taxes.</blockquote>
+                <h2 class="h6 text-white-70">Taxes</h2>
+              </div>
+              <!-- End Testimonials -->
+            </div>
+
+            <div class="js-slide">
+              <!-- Testimonials -->
+              <div class="w-md-80 w-lg-60 text-center mx-auto">
+                <blockquote class="h5 text-white font-weight-normal mb-4">All your employees' payroll needs are covered.</blockquote>
+                <h3 class="h6 text-white-70">Payroll</h3>
+              </div>
+              <!-- End Testimonials -->
+            </div>
+          </div>
+          <!-- End Testimonials Carousel Main -->
+
+          <!-- Testimonials Carousel Pagination -->
+          <div id="testimonialsNavPagination" class="js-slick-carousel u-slick u-slick--transform-off u-slick--pagination-modern u-slick--transform-off mx-auto"
+               data-infinite="true"
+               data-autoplay="true"
+               data-speed="5000"
+               data-center-mode="true"
+               data-slides-show="3"
+               data-is-thumbs="true"
+               data-focus-on-select="true"
+               data-nav-for="#testimonialsNavMain">
+            <div class="js-slide">
+              <div class="u-avatar mx-auto">
+
+                <span class="fas fa-book fa-3x" style="color:rgb(255, 255, 255);"></span>
+              </div>
+            </div>
+
+            <div class="js-slide">
+              <div class="u-avatar mx-auto">
+                    <span class="fas fa-file-invoice-dollar fa-3x" style="color:rgb(255, 255, 255);"></span>
+              </div>
+            </div>
+
+            <div class="js-slide">
+              <div class="u-avatar mx-auto">
+                <span class="fas fa-file-invoice fa-3x" style="color:rgb(255, 255, 255);"></span>
+              </div>
+            </div>
+          </div>
+          <!-- End Testimonials Carousel Pagination -->
+
+          <!-- Clients -->
+          <div class="position-absolute right-0 bottom-0 left-0 text-center p-5">
+            <h4 class="h6 text-white-70 mb-3">taxpass.co</h4>
+
+          </div>
+          <!-- End Clients -->
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-1 offset-xl-3 space-lg-0">
+            <!-- Form -->
+            <form class="js-validate mt-1 form-control-md" method="POST">
+              <!-- Title -->
+              <div class="mb-7">
+                <h1 class="h3 text-primary font-weight-normal mb-0">Welcome to <span class="font-weight-semi-bold">TaxPass</span></h1>
+                <p>Fill out the form to get started.</p>
+              </div>
+              <!-- End Title -->
+              {% csrf_token %}
+
+              <!-- Form Group -->
+                  <div class="js-focus-state input-group mb-2">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <span class="fas fa-envelope"></span>
+                      </span>
+                    </div>
+                    {% render_field signup_form.email required="true" class="form-control" name="email" id="signinSrEmail" placeholder="Email" aria-label="Email address" data-msg="Please enter a valid email address." data-error-class="u-has-error" data-success-class="u-has-success" %}
+                  </div>
+
+                  <div class="js-focus-state input-group mb-2">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <span class="fas fa-building"></span>
+                      </span>
+                    </div>
+                    {% render_field signup_form.visa_status class="form-control" name="visa status" id="visa_status" placeholder="Visa Status" aria-label="TaxPass" data-success-class="u-has-success" %}
+                  </div>
+
+                  <div class="js-focus-state input-group mb-2">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <span class="fas fa-phone"></span>
+                      </span>
+                    </div>
+                    {% render_field signup_form.occupation class="form-control" placeholder="Occupation" name="occupation" id="occupation" aria-label="occupation" data-success-class="u-has-success" %}
+                  </div>
+
+                  <div class="js-focus-state input-group mb-2">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <span class="fas fa-map-marker-alt"></span>
+                      </span>
+                    </div>
+                    {% render_field signup_form.state class="form-control" name="state" id="state" aria-label="state" data-success-class="u-has-success" %}
+                  </div>
+
+                  <div class="js-focus-state input-group mb-2">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <span class="fas fa-clock"></span>
+                      </span>
+                    </div>
+                    {% render_field signup_form.callback_default class="form-control" name="callback" id="callback" aria-label="callback" data-success-class="u-has-success" %}
+                  </div>
+
+                  <div class="js-focus-state input-group mb-2" id="callback_group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <span class="fas fa-clock"></span>
+                      </span>
+                    </div>
+                    {% render_field signup_form.callback type="text" class+="form-control" name="callback_default" id="callback_default" aria-label="callback_default" data-success-class="u-has-success" placeholder="Schedule a callback"%}
+                  </div><br>
+
+              <div class="form-group">
+                <label class="form-label">Services</label>
+                <input type="radio" name="services" value="Bookkeeping" required> Bookkeeping&nbsp;
+                <input type="radio" name="services" value="Payroll" required> Payroll&nbsp;
+                <input type="radio" name="services" value="Tax" required> Tax Prep&nbsp;
+                <input type="radio" name="services" value="All" required> All&nbsp;
+              </div><br>
+
+
+              <!-- Checkbox -->
+              <div class="js-form-message mb-5">
+                <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
+                  <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="termsCheckbox" required
+                         data-msg="Please accept our Terms and Conditions."
+                         data-error-class="u-has-error"
+                         data-success-class="u-has-success">
+                  <label class="custom-control-label" for="termsCheckbox">
+                    <small>
+                      I agree to the
+                      <a class="link-muted" target="blank" href="{% url 'terms' %}">Terms and Conditions</a>
+                    </small>
+                  </label>
+                </div>
+              </div>
+              <!-- End Checkbox -->
+
+              <!-- Button -->
+              <div class="row align-items-center mb-5">
+                <div class="col-7 col-sm-6 text-right">
+                  <button type="submit" class="btn btn-primary transition-3d-hover">Get Started</button>
+                </div>
+              </div>
+              <!-- End Button -->
+            </form>
+            <!-- End Form -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Form -->
+  </main>
+  <!-- ========== END MAIN ========== -->
+<script>
+    document.getElementById('signinSrEmail').value = '{{front_email}}'
+</script>
+  <!-- JS Global Compulsory -->
+  <script src="/assets/tricky/assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/tricky/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="/assets/tricky/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="/assets/tricky/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+  <!-- JS Implementing Plugins -->
+  <script src="/assets/tricky/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="/assets/tricky/assets/vendor/slick-carousel/slick/slick.js"></script>
+
+  <!-- JS Front -->
+  <script src="/assets/tricky/assets/js/hs.core.js"></script>
+  <script src="/assets/tricky/assets/js/components/hs.validation.js"></script>
+  <script src="/assets/tricky/assets/js/components/hs.slick-carousel.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      $("#callback_group").hide()
+      $('#callback').on('change',function(){
+        if( $(this).val()==="Later"){
+          $("#callback_group").show()
+        }
+        else{
+          $("#callback_group").hide()
+        }
+    });
+
+    $("#callback_default").flatpickr({
+        minDate: 'today',
+        enableTime: true,
+        dateFormat: "F, d Y H:i"
+    });
+
+    $("#timePicker").flatpickr({
+        enableTime: true,
+        noCalendar: true,
+        time_24hr: true,
+        dateFormat: "H:i",
+    });
+      // initialization of slick carousel
+      $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+      $(".selector").flatpickr(optional_config);
+      $.HSCore.components.HSValidation.init('.js-validate', {
+        rules: {
+          confirmPassword: {
+            equalTo: '#signupPassword'
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
