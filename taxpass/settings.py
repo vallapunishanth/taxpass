@@ -124,3 +124,11 @@ MEDIA_URL = '/assets/'
 MEDIA_ROOT = (
     os.path.join(BASE_DIR, 'assets')
 )
+
+# Email Settings
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'info@trickytax.com'
+EMAIL_HOST_PASSWORD = 'Chintu@123'
+EMAIL_USE_TLS = True

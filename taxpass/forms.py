@@ -7,7 +7,7 @@ from .models import Signup, Profile, Contact, Email
 class SingupForm(forms.ModelForm):
     class Meta:
         model = Signup
-        fields = ('email', 'name', 'visa_status', 'occupation', 'marital_status', 'state', 'callback_default', 'callback')
+        fields = ('email', 'name', 'visa_status', 'occupation', 'marital_status', 'phone', 'state', 'callback_default', 'callback')
 
 
 class UploadFileForm(forms.Form):

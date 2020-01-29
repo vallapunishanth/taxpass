@@ -69,7 +69,7 @@
             <div class="js-slide">
               <!-- Testimonials -->
               <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h5 text-white font-weight-normal mb-4">All your taxes are taken care by experts who are well aware of immigration needs.</blockquote>
+                <blockquote class="h5 text-white font-weight-normal  mb-4">All your taxes are taken care by experts who are well aware of immigration needs.</blockquote>
                 <h1 class="h6 text-white-70">Bookkeeping</h1>
               </div>
               <!-- End Testimonials -->
@@ -164,17 +164,46 @@
                         <span class="fas fa-building"></span>
                       </span>
                     </div>
+                    {% render_field signup_form.name class="form-control" name="name status" id="name" placeholder="Name" aria-label="TaxPass" data-success-class="u-has-success" %}
+                  </div>
+
+                <div class="js-focus-state input-group mb-2">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <span class="fas fa-building"></span>
+                      </span>
+                    </div>
                     {% render_field signup_form.visa_status class="form-control" name="visa status" id="visa_status" placeholder="Visa Status" aria-label="TaxPass" data-success-class="u-has-success" %}
+                  </div>
+
+
+                  <div class="js-focus-state input-group mb-2">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <span class="fas fa-user-tie"></span>
+                      </span>
+                    </div>
+                    {% render_field signup_form.occupation class="form-control" placeholder="Occupation" name="occupation" id="occupation" aria-label="occupation" data-success-class="u-has-success" %}
                   </div>
 
                   <div class="js-focus-state input-group mb-2">
                     <div class="input-group-prepend">
                       <span class="input-group-text">
+                        <span class="fas fa-user-tie"></span>
+                      </span>
+                    </div>
+                    {% render_field signup_form.marital_status class="form-control" placeholder="Marital Status (Married with kids)" name="marital_status" id="marital_status" aria-label="marital_status" data-success-class="u-has-success" %}
+                  </div>
+
+                    <div class="js-focus-state input-group mb-2">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
                         <span class="fas fa-phone"></span>
                       </span>
                     </div>
-                    {% render_field signup_form.occupation class="form-control" placeholder="Occupation" name="occupation" id="occupation" aria-label="occupation" data-success-class="u-has-success" %}
+                    {% render_field signup_form.phone class="form-control" placeholder="Phone" name="phone" id="phone" aria-label="phone" data-success-class="u-has-success" %}
                   </div>
+
 
                   <div class="js-focus-state input-group mb-2">
                     <div class="input-group-prepend">
@@ -205,10 +234,16 @@
 
               <div class="form-group">
                 <label class="form-label">Services</label>
-                <input type="radio" name="services" value="Bookkeeping" required> Bookkeeping&nbsp;
-                <input type="radio" name="services" value="Payroll" required> Payroll&nbsp;
-                <input type="radio" name="services" value="Tax" required> Tax Prep&nbsp;
-                <input type="radio" name="services" value="All" required> All&nbsp;
+                <div>
+                <input type="checkbox" name="1" value="income_lt_400" >  No income<$400<br>
+                <input type="checkbox" name="2" value`:="multiple_w2" >  Multiple W-2's<br>
+                <input type="checkbox" name="3" value="joint_filing" >  Joint Filing(Spouse)<br>
+                <input type="checkbox" name="4" value="rent" >  I Pay Rent<br>
+                <input type="checkbox" name="5" value="self_employed" >  Self Employed<br>
+                <input type="checkbox" name="6" value="property_tax" >  Mortgage/Property tax deductions<br>
+                <input type="checkbox" name="7" value="money_to_india" >  I send money to India<br>
+                <input type="checkbox" name="8" value="stocks_retail" >  I invest in stocks/Retail Property<br>
+                    </div>
               </div><br>
 
 

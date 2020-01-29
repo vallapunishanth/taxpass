@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Libs CSS -->
-    <link rel="stylesheet" href="/assets/fonts/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="./assets/fonts/Feather/feather.css">
     <link rel="stylesheet" href="./assets/libs/flickity/dist/flickity.min.css">
     <link rel="stylesheet" href="./assets/libs/flickity-fade/flickity-fade.css">
@@ -420,7 +420,7 @@
       <div class="container">
 
         <!-- Brand -->
-        <a class="navbar-brand" href="./index.html">
+        <a class="navbar-brand" href="./">
     <!--      <img src="./static/img/brand.svg" class="navbar-brand-img" alt="...">-->
     <!--      <img src="" class="navbar-brand-img" alt="Taxpass">-->
               <h1 style="color: ">Taxpass</h1>
@@ -442,7 +442,7 @@
           <!-- Navigation -->
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarLandings" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link" id="navbarLandings" href="/" aria-haspopup="true" aria-expanded="false">
                 Home
               </a>
     <!--          <div class="dropdown-menu dropdown-menu-xl p-0" aria-labelledby="navbarLandings">-->
@@ -531,7 +531,7 @@
     <!--          </div>-->
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarPages" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarPages" data-toggle="dropdown" href="" aria-haspopup="true" aria-expanded="false">
                 About us
               </a>
     <!--          <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="navbarPages">-->
@@ -708,7 +708,7 @@
 
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDocumentation" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarDocumentation" data-toggle="dropdown" href="" aria-haspopup="true" aria-expanded="false">
                 Blog
               </a>
     <!--          <div class="dropdown-menu dropdown-menu-md" aria-labelledby="navbarDocumentation">-->
@@ -800,7 +800,7 @@
           </ul>
 
           <!-- Button -->
-          <a class="navbar-btn btn btn-sm btn-primary lift ml-auto" href="/signup" target="_blank">
+          <a class="navbar-btn btn btn-sm btn-primary lift ml-auto" href="/signup" target="">
             Sign Up
           </a>
 
@@ -832,25 +832,39 @@
             <h1 class="display-1 font-weight-bold">
 <!--              <div data-aos="fade-left">Tax Prep for Immigrants by </div>-->
 <!--              <div data-aos="fade-left" data-aos-delay="100">Immigration tax experts.</div>-->
-              <div data-aos="fade-right" style="font-size: 2.375rem !important;">Tax Prep for Immigrants by Immigration tax experts.</div>
+              <div data-aos="fade-right" style="font-size: 2.0rem !important;">Tax Prep for Immigrants by Immigration tax experts.</div>
             </h1>
 
             <!-- Text -->
             <div>
-              <h1 style="color:green;margin-bottom:0rem"> <font size="6">&#10003;</font> <span style="color:black;font-size: 25px">100% Immigration Compliance </span></h1>
-              <h1 style="color:green;margin-bottom:0rem"> <font size="6">&#10003;</font> <span style="color:black;font-size: 25px">100% Customer Satisfaction </span></h1>
-              <h1 style="color:green;margin-bottom:0rem"> <font size="6">&#10003;</font> <span style="color:black;font-size: 25px">Max Tax refund & Unlimited Tax advice </span></h1>
+              <h1 style="color:green;margin-bottom:0rem"> <font size=5>&#10003;</font> <span style="color:black;font-size: 20px">100% Immigration Compliance </span></h1>
+              <h1 style="color:green;margin-bottom:0rem"> <font size="5">&#10003;</font> <span style="color:black;font-size: 20px">100% Customer Satisfaction </span></h1>
+              <h1 style="color:green;margin-bottom:0rem"> <font size="5">&#10003;</font> <span style="color:black;font-size: 20px">Max Tax refund & Unlimited Tax advice </span></h1>
             </div>
 <!--            <p class="font-size-lg text-muted mb-0" data-aos="fade-left" data-aos-delay="200">-->
 <!--              Productivity tools can either help you or get in the way. Landkit aims to remove all barriers between you and just getting stuff done. Give us a try and we promise you won't regret it.-->
 <!--            </p>-->
 
-            <div class="input-group" style="margin: 3rem 0px 0px 0px">
-              <input type="email" class="form-control" name="email" id="signupSrEmail" style="margin: 0px 10px 0px 0px;" placeholder="Your email" aria-label="Your email" required="" data-msg="Please enter a valid email address." data-error-class="u-has-error" data-success-class="u-has-success">
-              <a class="navbar-btn btn btn-primary lift ml-auto" href="/signup"  target="_blank">
-              Sign Up
-            </a>
-            </div>
+            <form class="js-validate mb-3" method="POST" id="ada">
+                    {% csrf_token %}
+                    <div class="form-row" style="margin-top: 2rem">
+                        <div class="col-6 col-sm-8 mb-2">
+                            <div class="js-form-message">
+                                <label class="sr-only" for="signupSrEmail">Your email</label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" name="email" id="signupSrEmail"
+                                        placeholder="Your email" aria-label="Your email" required
+                                        data-msg="Please enter a valid email address." data-error-class="u-has-error"
+                                        data-success-class="u-has-success">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-4">
+                            <button type="submit" class="btn btn-primary btn-wide transition-3d-hover">Signup</button>
+                        </div>
+                    </div>
+                </form>
           </div>
           <div class="col-12 col-md-6">
 
@@ -1158,9 +1172,9 @@
                   </div>
 
                   <!-- Text -->
-                  <p >
-                    Add space anytime
-                  </p>
+<!--                  <p >-->
+<!--                    Add space anytime-->
+<!--                  </p>-->
 
                 </div>
 
@@ -1172,9 +1186,9 @@
                     <i class="fe fe-check"></i>
                   </div>
 
-                  <p class="mb-lg-0">
-                    Group discounts
-                  </p>
+<!--                  <p class="mb-lg-0">-->
+<!--                    Group discounts-->
+<!--                  </p>-->
 
                 </div>
 
@@ -1309,7 +1323,7 @@
                 </div>
 
                 <!-- Button -->
-                <a href="#!" class="btn btn-block btn-primary-soft">
+                <a href="/signup" class="btn btn-block btn-primary-soft">
                   Start with Basic <i class="fe fe-arrow-right ml-3"></i>
                 </a>
 
@@ -1436,7 +1450,7 @@
                 </div>
 
                 <!-- Button -->
-                <a href="#!" class="btn btn-block btn-primary">
+                <a href="/signup" class="btn btn-block btn-primary">
                   Start with Standard <i class="fe fe-arrow-right ml-3"></i>
                 </a>
 
@@ -1589,7 +1603,7 @@
                 </div>
 
                 <!-- Button -->
-                <a href="#!" class="btn btn-block btn-primary-soft">
+                <a href="/signup" class="btn btn-block btn-primary-soft">
                   Start with Premium <i class="fe fe-arrow-right ml-3"></i>
                 </a>
 
@@ -1755,7 +1769,7 @@
                           You got a doubt/question if you are legally permitted to do something without affecting your tax status, thats when you send us a tax about your question.
                           We will consider all your visa category and provide advice based on that. And there is no limit on no of questions.
                         </p>
-<!--                        <a href="#!" class="font-weight-bold text-decoration-none">-->
+<!--                        <a href="" class="font-weight-bold text-decoration-none">-->
 <!--                          Check it out <i class="fe fe-arrow-right ml-3"></i>-->
 <!--                        </a>-->
                       </div>
@@ -1793,7 +1807,7 @@
                         <p>
                           Coming Soon!
                         </p>
-<!--                        <a href="#!" class="font-weight-bold text-decoration-none">-->
+<!--                        <a href="" class="font-weight-bold text-decoration-none">-->
 <!--                          Check it out <i class="fe fe-arrow-right ml-3"></i>-->
 <!--                        </a>-->
                       </div>
@@ -1831,7 +1845,7 @@
                         <p>
                           Coming Soon!
                         </p>
-<!--                        <a href="#!" class="font-weight-bold text-decoration-none">-->
+<!--                        <a href="" class="font-weight-bold text-decoration-none">-->
 <!--                          -->
 <!--                        </a>-->
                       </div>
@@ -2019,22 +2033,22 @@
             <!-- Social -->
             <ul class="list-unstyled list-inline list-social mb-6 mb-md-0">
               <li class="list-inline-item list-social-item mr-3">
-                <a href="#!" class="text-decoration-none">
+                <a href="" class="text-decoration-none">
                   <img src="./assets/img/icons/social/instagram.svg" class="list-social-icon" alt="...">
                 </a>
               </li>
               <li class="list-inline-item list-social-item mr-3">
-                <a href="#!" class="text-decoration-none">
+                <a href="" class="text-decoration-none">
                   <img src="./assets/img/icons/social/facebook.svg" class="list-social-icon" alt="...">
                 </a>
               </li>
               <li class="list-inline-item list-social-item mr-3">
-                <a href="#!" class="text-decoration-none">
+                <a href="" class="text-decoration-none">
                   <img src="./assets/img/icons/social/twitter.svg" class="list-social-icon" alt="...">
                 </a>
               </li>
               <li class="list-inline-item list-social-item">
-                <a href="#!" class="text-decoration-none">
+                <a href="" class="text-decoration-none">
                   <img src="./assets/img/icons/social/pinterest.svg" class="list-social-icon" alt="...">
                 </a>
               </li>
@@ -2051,27 +2065,27 @@
             <!-- List -->
             <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
               <li class="mb-3">
-                <a href="#!" class="text-reset">
+                <a href="" class="text-reset">
                   Personal Tax
                 </a>
               </li>
               <li class="mb-3">
-                <a href="#!" class="text-reset">
+                <a href="" class="text-reset">
                   Fbars
                 </a>
               </li>
               <li class="mb-3">
-                <a href="#!" class="text-reset">
+                <a href="" class="text-reset">
                   Tax Advice
                 </a>
               </li>
               <li class="mb-3">
-                <a href="#!" class="text-reset">
+                <a href="" class="text-reset">
                   Financial Advice
                 </a>
               </li>
               <li>
-                <a href="#!" class="text-reset">
+                <a href="" class="text-reset">
                   Loan Advice
                 </a>
               </li>
@@ -2088,27 +2102,27 @@
             <!-- List -->
             <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
               <li class="mb-3">
-                <a href="#!" class="text-reset">
+                <a href="" class="text-reset">
                   About us
                 </a>
               </li>
               <li class="mb-3">
-                <a href="#!" class="text-reset">
+                <a href="" class="text-reset">
                   Blog
                 </a>
               </li>
               <li class="mb-3">
-                <a href="#!" class="text-reset">
+                <a href="#faq" class="text-reset">
                   FAQ's
                 </a>
               </li>
               <li class="mb-3">
-                <a href="#!" class="text-reset">
+                <a href="" class="text-reset">
                   Careers
                 </a>
               </li>
               <li class="mb-3">
-                <a href="#!" class="text-reset">
+                <a href="" class="text-reset">
                   Contact us
                 </a>
               </li>
@@ -2125,37 +2139,37 @@
     <!--        &lt;!&ndash; List &ndash;&gt;-->
     <!--        <ul class="list-unstyled text-muted mb-0">-->
     <!--          <li class="mb-3">-->
-    <!--            <a href="#!" class="text-reset">-->
+    <!--            <a href="" class="text-reset">-->
     <!--              Page Builder-->
     <!--            </a>-->
     <!--          </li>-->
     <!--          <li class="mb-3">-->
-    <!--            <a href="#!" class="text-reset">-->
+    <!--            <a href="" class="text-reset">-->
     <!--              UI Kit-->
     <!--            </a>-->
     <!--          </li>-->
     <!--          <li class="mb-3">-->
-    <!--            <a href="#!" class="text-reset">-->
+    <!--            <a href="" class="text-reset">-->
     <!--              Styleguide-->
     <!--            </a>-->
     <!--          </li>-->
     <!--          <li class="mb-3">-->
-    <!--            <a href="#!" class="text-reset">-->
+    <!--            <a href="" class="text-reset">-->
     <!--              Documentation-->
     <!--            </a>-->
     <!--          </li>-->
     <!--          <li class="mb-3">-->
-    <!--            <a href="#!" class="text-reset">-->
+    <!--            <a href="" class="text-reset">-->
     <!--              Changelog-->
     <!--            </a>-->
     <!--          </li>-->
     <!--          <li class="mb-3">-->
-    <!--            <a href="#!" class="text-reset">-->
+    <!--            <a href="" class="text-reset">-->
     <!--              Documentation-->
     <!--            </a>-->
     <!--          </li>-->
     <!--          <li>-->
-    <!--            <a href="#!" class="text-reset">-->
+    <!--            <a href="" class="text-reset">-->
     <!--              Changelog-->
     <!--            </a>-->
     <!--          </li>-->
@@ -2172,17 +2186,17 @@
     <!--        &lt;!&ndash; List &ndash;&gt;-->
     <!--        <ul class="list-unstyled text-muted mb-0">-->
     <!--          <li class="mb-3">-->
-    <!--            <a href="#!" class="text-reset">-->
+    <!--            <a href="" class="text-reset">-->
     <!--              Documentation-->
     <!--            </a>-->
     <!--          </li>-->
     <!--          <li class="mb-3">-->
-    <!--            <a href="#!" class="text-reset">-->
+    <!--            <a href="" class="text-reset">-->
     <!--              Changelog-->
     <!--            </a>-->
     <!--          </li>-->
     <!--          <li>-->
-    <!--            <a href="#!" class="text-reset">-->
+    <!--            <a href="" class="text-reset">-->
     <!--              Pagebuilder-->
     <!--            </a>-->
     <!--          </li>-->

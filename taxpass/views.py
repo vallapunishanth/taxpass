@@ -43,13 +43,19 @@ def signup(request):
             callback_default = form.cleaned_data['callback_default']
             callback = form.cleaned_data['callback']
             email = form.cleaned_data['email']
-            company = form.cleaned_data['company']
+            name = form.cleaned_data['name']
+            occupation = form.cleaned_data['occupation']
+            marital_status = form.cleaned_data['marital_status']
+            visa_status = form.cleaned_data['visa_status']
             state = form.cleaned_data['state']
             phone = form.cleaned_data['phone']
-            services = form.cleaned_data['services']
+            services = ",".join([form.cleaned_data[str(i)] for i in range(1, 9) if str(i) in form.cleaned_data])
             obj, created = Signup.objects.update_or_create(
                 email=email,
-                company=company,
+                name=name,
+                marital_status=marital_status,
+                occupation=occupation,
+                visa_status=visa_status,
                 state=state,
                 phone=phone,
                 services=services,
@@ -64,12 +70,12 @@ def signup(request):
 
             if created:
                 update_info = False
-                html_message = render_to_string('signup_email.html', {'company': company, 'time': email_time})
-                send_mail('TrickyTax Callback Confirmation',
-                          'Hi {}! We have scheduled a callback in/on: {}'.format(company, email_time),
+                html_message = render_to_string('signup_email.html', {'name': name, 'time': email_time})
+                send_mail('TaxPass Callback Confirmation',
+                          'Hi {}! We have scheduled a callback in/on: {}'.format(name, email_time),
                           'Taxpass <info@taxpass.com>', [form.cleaned_data['email']], html_message=html_message)
-                send_mail('Taxpass Signup - {}'.format(company), 'email: {}, phone: {}, company: {}, \
-                time: {}, services: {}, '.format(email, phone, company, email_time, services), 'info@taxpass.com',
+                send_mail('Taxpass Signup - {}'.format(name), 'email: {}, phone: {}, company: {}, \
+                time: {}, services: {}, '.format(email, phone, name, email_time, services), 'info@taxpass.com',
                           ['info@taxpass.com'])
             else:
                 update_info = True
@@ -180,8 +186,8 @@ def signup(request):
 # def about(request):
 #     template = 'main/about.html'
 #     return render(request, template)
-#
-#
+
+
 def terms(request):
     template = 'terms.html'
     return render(request, template)
