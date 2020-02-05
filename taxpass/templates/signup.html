@@ -1,6 +1,5 @@
 {% load static %}
 {% load widget_tweaks %}
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Title -->
@@ -21,7 +20,7 @@
   <link rel="stylesheet" href="/assets/tricky/assets/vendor/animate.css/animate.min.css">
   <link rel="stylesheet" href="/assets/tricky/assets/vendor/slick-carousel/slick/slick.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
+  <link rel="stylesheet" href="/assets/vendor/datetime-picker/jquery.datetimepicker.css"/>
 
   <!-- CSS Front Template -->
   <link rel="stylesheet" href="/assets/tricky/assets/css/theme.css">
@@ -70,28 +69,28 @@
               <!-- Testimonials -->
               <div class="w-md-80 w-lg-60 text-center mx-auto">
                 <blockquote class="h5 text-white font-weight-normal  mb-4">All your taxes are taken care by experts who are well aware of immigration needs.</blockquote>
-                <h1 class="h6 text-white-70">Bookkeeping</h1>
+                <h1 class="h6 text-white-70">Taxes</h1>
               </div>
               <!-- End Testimonials -->
             </div>
 
-            <div class="js-slide">
-              <!-- Testimonials -->
-              <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h5 text-white font-weight-normal mb-4">We help with your corporate, franchise & staff's taxes.</blockquote>
-                <h2 class="h6 text-white-70">Taxes</h2>
-              </div>
-              <!-- End Testimonials -->
-            </div>
+<!--            <div class="js-slide">-->
+<!--              &lt;!&ndash; Testimonials &ndash;&gt;-->
+<!--              <div class="w-md-80 w-lg-60 text-center mx-auto">-->
+<!--                <blockquote class="h5 text-white font-weight-normal mb-4">We help with your corporate, franchise & staff's taxes.</blockquote>-->
+<!--                <h2 class="h6 text-white-70">Taxes</h2>-->
+<!--              </div>-->
+<!--              &lt;!&ndash; End Testimonials &ndash;&gt;-->
+<!--            </div>-->
 
-            <div class="js-slide">
-              <!-- Testimonials -->
-              <div class="w-md-80 w-lg-60 text-center mx-auto">
-                <blockquote class="h5 text-white font-weight-normal mb-4">All your employees' payroll needs are covered.</blockquote>
-                <h3 class="h6 text-white-70">Payroll</h3>
-              </div>
-              <!-- End Testimonials -->
-            </div>
+<!--            <div class="js-slide">-->
+<!--              &lt;!&ndash; Testimonials &ndash;&gt;-->
+<!--              <div class="w-md-80 w-lg-60 text-center mx-auto">-->
+<!--                <blockquote class="h5 text-white font-weight-normal mb-4">All your employees' payroll needs are covered.</blockquote>-->
+<!--                <h3 class="h6 text-white-70">Payroll</h3>-->
+<!--              </div>-->
+<!--              &lt;!&ndash; End Testimonials &ndash;&gt;-->
+<!--            </div>-->
           </div>
           <!-- End Testimonials Carousel Main -->
 
@@ -112,17 +111,17 @@
               </div>
             </div>
 
-            <div class="js-slide">
-              <div class="u-avatar mx-auto">
-                    <span class="fas fa-file-invoice-dollar fa-3x" style="color:rgb(255, 255, 255);"></span>
-              </div>
-            </div>
+<!--            <div class="js-slide">-->
+<!--              <div class="u-avatar mx-auto">-->
+<!--                    <span class="fas fa-file-invoice-dollar fa-3x" style="color:rgb(255, 255, 255);"></span>-->
+<!--              </div>-->
+<!--            </div>-->
 
-            <div class="js-slide">
-              <div class="u-avatar mx-auto">
-                <span class="fas fa-file-invoice fa-3x" style="color:rgb(255, 255, 255);"></span>
-              </div>
-            </div>
+<!--            <div class="js-slide">-->
+<!--              <div class="u-avatar mx-auto">-->
+<!--                <span class="fas fa-file-invoice fa-3x" style="color:rgb(255, 255, 255);"></span>-->
+<!--              </div>-->
+<!--            </div>-->
           </div>
           <!-- End Testimonials Carousel Pagination -->
 
@@ -139,11 +138,11 @@
         <div class="row no-gutters">
           <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-1 offset-xl-3 space-lg-0">
             <!-- Form -->
-            <form class="js-validate mt-1 form-control-md" method="POST">
+            <form class="js-validate mt-1 form-control-md" id="form" method="POST">
               <!-- Title -->
               <div class="mb-7">
                 <h1 class="h3 text-primary font-weight-normal mb-0">Welcome to <span class="font-weight-semi-bold">TaxPass</span></h1>
-                <p>Fill out the form to get started.</p>
+                <p>Fill out the form and our tax professional will reach out to you soon.</p>
               </div>
               <!-- End Title -->
               {% csrf_token %}
@@ -167,33 +166,10 @@
                     {% render_field signup_form.name class="form-control" name="name status" id="name" placeholder="Name" aria-label="TaxPass" data-success-class="u-has-success" %}
                   </div>
 
-                <div class="js-focus-state input-group mb-2">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <span class="fas fa-building"></span>
-                      </span>
-                    </div>
-                    {% render_field signup_form.visa_status class="form-control" name="visa status" id="visa_status" placeholder="Visa Status" aria-label="TaxPass" data-success-class="u-has-success" %}
-                  </div>
 
 
-                  <div class="js-focus-state input-group mb-2">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <span class="fas fa-user-tie"></span>
-                      </span>
-                    </div>
-                    {% render_field signup_form.occupation class="form-control" placeholder="Occupation" name="occupation" id="occupation" aria-label="occupation" data-success-class="u-has-success" %}
-                  </div>
 
-                  <div class="js-focus-state input-group mb-2">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <span class="fas fa-user-tie"></span>
-                      </span>
-                    </div>
-                    {% render_field signup_form.marital_status class="form-control" placeholder="Marital Status (Married with kids)" name="marital_status" id="marital_status" aria-label="marital_status" data-success-class="u-has-success" %}
-                  </div>
+
 
                     <div class="js-focus-state input-group mb-2">
                     <div class="input-group-prepend">
@@ -204,47 +180,14 @@
                     {% render_field signup_form.phone class="form-control" placeholder="Phone" name="phone" id="phone" aria-label="phone" data-success-class="u-has-success" %}
                   </div>
 
-
-                  <div class="js-focus-state input-group mb-2">
+                  <div class="js-focus-state input-group mb-2" id="open">
                     <div class="input-group-prepend">
                       <span class="input-group-text">
-                        <span class="fas fa-map-marker-alt"></span>
+                        <span class="fas fa-calendar-day"></span>
                       </span>
                     </div>
-                    {% render_field signup_form.state class="form-control" name="state" id="state" aria-label="state" data-success-class="u-has-success" %}
-                  </div>
-
-                  <div class="js-focus-state input-group mb-2">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <span class="fas fa-clock"></span>
-                      </span>
-                    </div>
-                    {% render_field signup_form.callback_default class="form-control" name="callback" id="callback" aria-label="callback" data-success-class="u-has-success" %}
-                  </div>
-
-                  <div class="js-focus-state input-group mb-2" id="callback_group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <span class="fas fa-clock"></span>
-                      </span>
-                    </div>
-                    {% render_field signup_form.callback type="text" class+="form-control" name="callback_default" id="callback_default" aria-label="callback_default" data-success-class="u-has-success" placeholder="Schedule a callback"%}
+                    <input type="text" name="callback_datetime" maxlength="30" class="form-control" placeholder="Schedule a callback" data-success-class="u-has-success" aria-label="callback_default" id="datetimepicker4">
                   </div><br>
-
-              <div class="form-group">
-                <label class="form-label">Services</label>
-                <div>
-                <input type="checkbox" name="1" value="income_lt_400" >  No income<$400<br>
-                <input type="checkbox" name="2" value`:="multiple_w2" >  Multiple W-2's<br>
-                <input type="checkbox" name="3" value="joint_filing" >  Joint Filing(Spouse)<br>
-                <input type="checkbox" name="4" value="rent" >  I Pay Rent<br>
-                <input type="checkbox" name="5" value="self_employed" >  Self Employed<br>
-                <input type="checkbox" name="6" value="property_tax" >  Mortgage/Property tax deductions<br>
-                <input type="checkbox" name="7" value="money_to_india" >  I send money to India<br>
-                <input type="checkbox" name="8" value="stocks_retail" >  I invest in stocks/Retail Property<br>
-                    </div>
-              </div><br>
 
 
               <!-- Checkbox -->
@@ -280,7 +223,7 @@
     <!-- End Form -->
   </main>
   <!-- ========== END MAIN ========== -->
-<script>
+  <script>
     document.getElementById('signinSrEmail').value = '{{front_email}}'
 </script>
   <!-- JS Global Compulsory -->
@@ -299,6 +242,8 @@
   <script src="/assets/tricky/assets/js/components/hs.slick-carousel.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <!-- JS Plugins Init. -->
+
+  <script src="/assets/vendor/datetime-picker/jquery.datetimepicker.js"></script>
   <script>
     $(document).on('ready', function () {
       $("#callback_group").hide()
@@ -334,6 +279,24 @@
         }
       });
     });
+  $('#datetimepicker4').datetimepicker({
+      format:'m/d/Y H:i',
+      step: 10,
+  });
+  $('#form').submit(function(eventObj) {
+    var utcTime = document.getElementById('datetimepicker4').value
+    if(utcTime){
+       utcTime = new Date(utcTime)
+       utcTime = utcTime.getUTCMonth()+ "/" + utcTime.getUTCDate() +"/"+ utcTime.getUTCFullYear() +" "+ utcTime.getUTCHours() +":"+ utcTime.getUTCMinutes()
+      $(this).append('<input type="hidden" name="utc_callback" value="'+utcTime+'" /> ');
+    }
+    else{
+      $(this).append('<input type="hidden" name="utc_callback" value="" /> ');
+    }
+          return true;
+
+});
+
   </script>
 </body>
 </html>

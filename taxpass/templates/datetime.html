@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="/assets/vendor/datetime-picker/jquery.datetimepicker.css"/>
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<title>jQuery datetimepicker Plugin Examples</title>
+</head>
+<body>
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="https://www.jqueryscript.net/time-clock/Clean-jQuery-Date-Time-Picker-Plugin-datetimepicker.html">Download This Plugin</a></li>
+<li><a href="https://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul><div id="carbon-block"></div>
+
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+<h1 style="margin-top:150px;">jQuery datetimepicker Plugin Examples</h1>
+	<h3>DateTimePicker</h3>
+	<input type="text" value="2014/03/15 05:06" id="datetimepicker"/><br><br>
+	<h3>Mask DateTimePicker</h3>
+	<input type="text" value="" id="datetimepicker_mask"/><br><br>
+	<h3>TimePicker</h3>
+	<input type="text" id="datetimepicker1"/><br><br>
+	<h3>DatePicker</h3>
+	<input type="text" id="datetimepicker2"/><br><br>
+	<h3>Inline DateTimePicker</h3>
+	<input type="text" id="datetimepicker3"/><br><br>
+	<h3>Button Trigger</h3>
+	<input type="text" id="datetimepicker4"/><input id="open" type="button" value="open"/><input id="close" type="button" value="close"/>
+	<h3>TimePicker allows time</h3>
+	<input type="text" id="datetimepicker5"/><br><br>
+	<h3>Destroy DateTimePicker</h3>
+	<input type="text" id="datetimepicker6"/><input id="destroy" type="button" value="destroy"/>
+</body>
+<script src="/assets/tricky/assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/assets/vendor/datetime-picker/jquery.datetimepicker.js"></script>
+<script>
+$('#datetimepicker_mask').datetimepicker({
+	mask:'9999/19/39 29:59',
+});
+$('#datetimepicker').datetimepicker();
+$('#datetimepicker').datetimepicker({value:'2015/04/15 05:06'});
+$('#datetimepicker1').datetimepicker({
+	datepicker:false,
+	format:'H:i',
+	step:5
+});
+$('#datetimepicker2').datetimepicker({
+	timepicker:false,
+	format:'d/m/Y',
+	formatDate:'Y/m/d',
+	minDate:'-1970/01/02', // yesterday is minimum date
+	maxDate:'+1970/01/02' // and tommorow is maximum date calendar
+});
+$('#datetimepicker3').datetimepicker({
+	inline:true
+});
+$('#datetimepicker4').datetimepicker();
+$('#open').click(function(){
+	$('#datetimepicker4').datetimepicker('show');
+});
+$('#close').click(function(){
+	$('#datetimepicker4').datetimepicker('hide');
+});
+$('#datetimepicker5').datetimepicker({
+	datepicker:false,
+	allowTimes:['12:00','13:00','15:00','17:00','17:05','17:20','19:00','20:00']
+});
+$('#datetimepicker6').datetimepicker();
+$('#destroy').click(function(){
+	if( $('#datetimepicker6').data('xdsoft_datetimepicker') ){
+		$('#datetimepicker6').datetimepicker('destroy');
+		this.value = 'create';
+	}else{
+		$('#datetimepicker6').datetimepicker();
+		this.value = 'destroy';
+	}
+});
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>
