@@ -421,9 +421,9 @@
 
         <!-- Brand -->
         <a class="navbar-brand" href="./">
-          <img src="./assets/img/taxpass.jpeg" class="navbar-brand-img" alt="...">
-    <!--      <img src="" class="navbar-brand-img" alt="Taxpass">-->
-<!--              <h1 style="color: ">Taxpass</h1>-->
+<!--          <img src="./assets/img/taxpass.jpeg" class="navbar-brand-img" alt="...">-->
+<!--          <img src="" class="navbar-brand-img" alt="Taxpass">-->
+              <h1 style="color: ">Taxpass</h1>
         </a>
 
         <!-- Toggler -->
@@ -852,7 +852,7 @@
                             <div class="js-form-message">
                                 <label class="sr-only" for="signupSrEmail">Your email</label>
                                 <div class="input-group">
-                                    <input type="email" class="form-control" name="email" id="signupSrEmail"
+                                    <input type="email" class="form-control" style="border-color: #3372bf;" name="email" id="signupSrEmail"
                                         placeholder="Your email" aria-label="Your email" required
                                         data-msg="Please enter a valid email address." data-error-class="u-has-error"
                                         data-success-class="u-has-success">
@@ -1240,7 +1240,7 @@
 
     <!-- PRICING
     ================================================== -->
-    <section class="mt-n8 mt-md-n14">
+    <section class="mt-n8 mt-md-n14" style="margin-bottom:3rem">
       <div class="container">
         <div class="form-row">
           <div class="col-12 col-md-4">
@@ -1258,9 +1258,8 @@
 
                 <!-- Price -->
                 <div class="d-flex justify-content-center">
-                  <span class="h2"></span>
-                  <span class="price display-2 mb-0" data-annual="0" data-monthly="0">$100<strike class="display-4">$125</strike></span>
-<!--                  <span class="h2 align-self-end mb-1">/mo</span>-->
+                  <div><h1>$100</h1></div>
+                  <div><strike class="h5">$125</strike></div>
                 </div>
 
                 <!-- Text -->
@@ -1346,9 +1345,8 @@
 
                 <!-- Price -->
                 <div class="d-flex justify-content-center">
-                  <span class="h2 mb-0 mt-2"></span>
-                  <span class="price display-2 mb-0" data-annual="29" data-monthly="49"><strike class="display-4">$175</strike><sup class="display-3">$150</sup></span>
-<!--                  <span class="h2 align-self-end mb-1">/mo</span>-->
+                  <div><h1>$150</h1></div>
+                  <div><strike class="h5">$175</strike></div>
                 </div>
 
                 <!-- Text -->
@@ -1473,8 +1471,8 @@
 
                 <!-- Price -->
                 <div class="d-flex justify-content-center">
-                  <span class=""></span>
-                  <span class="display-2 mb-0" data-annual="49" data-monthly="69"><strike class="class display-4">$225</strike><sup class="display-3">$200</sup></span>
+                  <div><h1>$200</h1></div>
+                  <div><strike class="h5">$225</strike></div>
 <!--                  <span class="h2 align-self-end mb-1">/mo</span>-->
                 </div>
 
@@ -1706,7 +1704,7 @@
 
 
 
-    <section id="faq" class="py-8 py-md-11 bg-light">
+    <section id="faq" class="py-8 py-md-11 bg-light" style="background-color: #f1f4f8!important;">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-md-10 col-lg-8 text-center">
@@ -1728,7 +1726,7 @@
 
             <!-- Card -->
             <div class="card accordion" id="featuresAccordion">
-              <div class="card-body">
+              <div class="card-body shadow-light-lg overflow-hidden">
 
                 <!-- List group -->
                 <div class="list-group list-group-flush">
@@ -1865,7 +1863,7 @@
 
 
 
-    <div class="gradient-half-primary-v2">
+    <div class="gradient-half-primary-v2" style="margin-top: 4rem;margin-bottom: 4rem;">
         <!-- Subscribe Section -->
         <div class="container space-1 space-lg-2">
             <div class="row justify-content-lg-between align-items-lg-center">
@@ -1992,7 +1990,8 @@
                         <input type="hidden" name="csrfmiddlewaretoken" value="uDBCLswiWZ4GctktXsgzlaVnnMZLzThpCu825gcYosmqbIvgQAKynLmNwrol4tJj">
                         <label class="sr-only" for="heroSubscribeSrEmail">Your email address</label>
                         <div class="input-group input-group-lg input-group-pill">
-                            <input type="email" name="contact" required="" id="heroSubscribeSrEmail" placeholder="Your email address" class="form-control" aria-describedby="heroSubscribeButton" aria-label="Your email address" maxlength="50">
+                            {% csrf_token %}
+                            <input type="email" name="contact" style="border-color:#335eea" required="" id="heroSubscribeSrEmail" placeholder="Your email address" class="form-control" aria-describedby="heroSubscribeButton" aria-label="Your email address" maxlength="50">
 
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="submit" id="heroSubscribeButton">
@@ -2023,8 +2022,8 @@
           <div class="col-12 col-md-4 col-lg-4">
 
             <!-- Brand -->
-            <img src="./assets/img/taxpass.jpeg" alt="..." class="footer-brand img-fluid mb-2">
-<!--             <h1 class="text-muted">Taxpass</h1>-->
+<!--            <img src="./assets/img/taxpass.jpeg" alt="..." class="footer-brand img-fluid mb-2">-->
+             <h1 class="text-muted">Taxpass</h1>
             <!-- Text -->
             <p class="text-gray-700 mb-2">
               for immigrants.
