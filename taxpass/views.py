@@ -1,16 +1,9 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
-from django.contrib import messages
-from django.contrib.auth.forms import PasswordChangeForm, UserCreationForm
-from django.contrib.auth import update_session_auth_hash
 from .forms import SingupForm, EmailForm
-import datetime
 from taxpass import settings
-from .models import Signup, Profile
+from .models import Signup
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
-from django.contrib.auth.decorators import login_required
-# from .handlers import handle_uploaded_file, folder_list, get_file_link, generate_password
-from django.template import Context
 
 
 def home(request):
@@ -79,4 +72,9 @@ def signup(request):
 
 def terms(request):
     template = 'terms.html'
+    return render(request, template)
+
+
+def about(request):
+    template = 'about.html'
     return render(request, template)
