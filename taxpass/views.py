@@ -40,13 +40,13 @@ def signup(request):
             phone = form.cleaned_data['phone']
             utc_callback = form.cleaned_data['utc_callback']
             print(utc_callback.strftime("%m-%d-%Y %H:%M %Z%z"))
-            obj, created = Signup.objects.update_or_create(
-                email=email,
-                name=name,
-                phone=phone,
-                utc_callback=utc_callback
-            )
-
+            # obj, created = Signup.objects.update_or_create(
+            #     email=email,
+            #     name=name,
+            #     phone=phone,
+            #     utc_callback=utc_callback
+            # )
+            obj, created = None, True
             if created:
                 update_info = False
                 html_message = render_to_string('signup_email.html', {'name': name, 'time': utc_callback.strftime("%m-%d-%Y %H:%M %Z%z")})
