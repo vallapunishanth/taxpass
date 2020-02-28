@@ -284,14 +284,19 @@
       step: 10,
   });
   $('#form').submit(function(eventObj) {
-    var utcTime = document.getElementById('datetimepicker4').value
-    if(utcTime){
-       utcTime = new Date(utcTime)
-       utcTime = utcTime.getUTCMonth()+ "/" + utcTime.getUTCDate() +"/"+ utcTime.getUTCFullYear() +" "+ utcTime.getUTCHours() +":"+ utcTime.getUTCMinutes()
+    var actualTime = document.getElementById('datetimepicker4').value
+    console.log(actualTime);
+    if(actualTime){
+       var dateObject = new Date(actualTime)
+       console.log(dateObject);
+       var utcTime = dateObject.getUTCMonth()+1+ "/" + dateObject.getUTCDate() +"/"+ dateObject.getUTCFullYear() +" "+ dateObject.getUTCHours() +":"+ dateObject.getUTCMinutes();
+       console.log(utcTime);
       $(this).append('<input type="hidden" name="utc_callback" value="'+utcTime+'" /> ');
+      $(this).append('<input type="hidden" name="actual_time" value="'+dateObject.toISOString()+'" /> ');
     }
     else{
       $(this).append('<input type="hidden" name="utc_callback" value="" /> ');
+      $(this).append('<input type="hidden" name="actual_time" value="" /> ');
     }
           return true;
 
