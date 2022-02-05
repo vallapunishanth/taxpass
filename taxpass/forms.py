@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from .models import Signup, Profile, Contact, Email
-from bootstrap_datepicker_plus import DatePickerInput
+# from bootstrap_datepicker_plus import DatePickerInput
 
 
 class SingupForm(forms.ModelForm):
