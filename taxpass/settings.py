@@ -25,7 +25,7 @@ SECRET_KEY = 'skj75!kzw_x*%$^8n^=5by32s6=x!ypvq(bi1$8r=w#747$e5k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'www.taxpass.co']
+ALLOWED_HOSTS = ['127.0.0.1', 'www.taxpass.co','127.0.0.1:8000']
 
 
 # Application definition
@@ -128,8 +128,10 @@ MEDIA_ROOT = (
 
 # Email Settings
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = ''
+EMAIL_HOST_USER = 'vallapunishanth@gmail.com'
+SERVER_EMAIL = 'vallapunishanth@gmail.com'
 EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = True
