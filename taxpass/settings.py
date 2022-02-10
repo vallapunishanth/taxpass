@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'www.taxpass.co','127.0.0.1:8000']
 INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.staticfiles',
     'django.contrib.sessions',
     'django.contrib.messages',
     'taxpass',
@@ -120,6 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = (
+    os.path.join(BASE_DIR, 'static')
+)
+
 
 MEDIA_URL = '/assets/'
 MEDIA_ROOT = (
