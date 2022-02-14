@@ -25,7 +25,7 @@ SECRET_KEY = 'skj75!kzw_x*%$^8n^=5by32s6=x!ypvq(bi1$8r=w#747$e5k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','gettaxpass.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','143.198.102.215']
 
 
 # Application definition
